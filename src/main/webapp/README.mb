@@ -1,0 +1,7 @@
+1.react-router: 使用browserHistory需要后端服务器进行配置才能使用前端路由，hashHistory不需要。
+2.reducers拆分: 首先reducers是用户在前端操作view的时候，发出action给store，然后store根据action的type，决定将该action丢给哪个reducer处理，reducer的任务是
+接收action和state，计算出一个新的state，进行返回；当应用比较复杂的时候，我们如果全部action都放到一个reducer处理的话，会使得这个reducer非常
+庞大，这时我们就需要对reducer进行拆分，然后通过redux提供的combineReducers方法将这些reducer进行合并，这时需要注意的是：
+1.在combineReducer中，传入的参数为一个hash，每个reducer作为value，而state对应的属性作为key，如果reducer的名字与state的属性不一致，则需要使用
+类似于{a: reducerA}这样，其中a对应应用中state.a，; 如果一致则可以直接使用{reducerA, reducerB}，则reducerA对应state.reducerA，否则会
+出现reducer计算新的state之后，对应的components的props不会更新的情况。

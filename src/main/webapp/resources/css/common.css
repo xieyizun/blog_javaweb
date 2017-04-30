@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5d5;
+    font-family: Georgia, serif;
+    letter-spacing: -0.01em;
+    word-spacing: 0.2em;
+    line-height: 1.8em;
+    font-size: 62.5%;
+    color: #111111;
+    width: 98%;
+}
